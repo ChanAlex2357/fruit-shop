@@ -21,7 +21,7 @@
         // Recuperation de la connexion a la base de donnee
         $bdd = db_connect();
         // La requete pour la liste des categories
-        $requete = "select * from product";
+        $requete = "select * from products";
         // Execution de la requete
         $resultat = mysqli_query($bdd,$requete);
         while ($row = mysqli_fetch_assoc($resultat)){

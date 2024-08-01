@@ -1,3 +1,8 @@
+<?php
+    include ('../inc/functions.php');
+    $categories = get_all_category();
+    $products = get_all_product();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +18,9 @@
         <!-- MENU -->
         <div id="side-menu">
             <ul>
-                <li>Category 1</li>
-                <li>Category 2</li>
-                <li>Category 3</li>
-                <li>Category 4</li>
-                <li>Category 5</li>
+                <?php for($i = 0 ; $i < count($categories) ;$i++){?>
+                    <li><a href=""> <?= $categories[$i][1] ?></a></li>
+                <?php } ?>
             </ul>
         </div>
         <!-- CENTER CONTENTES -->
@@ -27,41 +30,15 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
             </div>
             <div id="product-showcase">
-                <div class="product">
+                <?php for ($i=0; $i < count($products); $i++) { ?>
+                    <div class="product">
                     <img src="" alt="">
                     <div>
-                        <h3>Product Name</h3>
-                        <p>100$</p>
+                        <h3><?=$products[$i][1]?></h3>
+                        <p><?=$products[$i][4]?></p>
                     </div>
                 </div>
-                <div class="product">
-                    <img src="" alt="">
-                    <div>
-                        <h3>Product Name</h3>
-                        <p>100$</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="" alt="">
-                    <div>
-                        <h3>Product Name</h3>
-                        <p>100$</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="" alt="">
-                    <div>
-                        <h3>Product Name</h3>
-                        <p>100$</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="" alt="">
-                    <div>
-                        <h3>Product Name</h3>
-                        <p>100$</p>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>

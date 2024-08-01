@@ -1,7 +1,7 @@
 <?php
     include ('../inc/functions.php');
     $categories = get_all_category();
-    $products = get_all_product();
+    $products = get_product(3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
